@@ -46,31 +46,33 @@
   };
 </script>
 
-  <meta name="description" content="记录工作日常，分享技术细节">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zeng&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="快速实现一个spring boot starter作为spring boot的使用者，对spring boot starter并不陌生，它极大程度地加强了我们的框架使用体验，能快速的进行其他中间件或者框架的集成，这里我就介绍一下，怎么快速实现一个自定义spring boot starter 项目使用到的各工具版本12JDK     1.8Maven   3.3.9  新建一个maven项目，引入需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速实现一个sping boot starter">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter&#x2F;index.html">
 <meta property="og:site_name" content="Zeng&#39;s Blog">
-<meta property="og:description" content="记录工作日常，分享技术细节">
+<meta property="og:description" content="快速实现一个spring boot starter作为spring boot的使用者，对spring boot starter并不陌生，它极大程度地加强了我们的框架使用体验，能快速的进行其他中间件或者框架的集成，这里我就介绍一下，怎么快速实现一个自定义spring boot starter 项目使用到的各工具版本12JDK     1.8Maven   3.3.9  新建一个maven项目，引入需">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-18T03:49:50.000Z">
+<meta property="article:modified_time" content="2019-12-19T05:38:07.105Z">
 <meta property="article:author" content="zengzhanliang">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="大数据">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/12/18/%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Zeng's Blog</title>
+  <title>快速实现一个sping boot starter | Zeng's Blog</title>
   
 
 
@@ -166,10 +168,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -183,8 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/18/%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter/" class="post-title-link" itemprop="url">快速实现一个sping boot starter</a>
+          快速实现一个sping boot starter
         </h1>
 
         <div class="post-meta">
@@ -215,7 +216,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="快速实现一个spring-boot-starter"><a href="#快速实现一个spring-boot-starter" class="headerlink" title="快速实现一个spring boot starter"></a>快速实现一个spring boot starter</h1><p><strong>作为spring boot的使用者，对spring boot starter并不陌生，它极大程度地加强了我们的框架使用体验，能快速的进行其他中间件或者框架的集成，这里我就介绍一下，怎么快速实现一个自定义spring boot starter</strong></p>
+        <h1 id="快速实现一个spring-boot-starter"><a href="#快速实现一个spring-boot-starter" class="headerlink" title="快速实现一个spring boot starter"></a>快速实现一个spring boot starter</h1><p><strong>作为spring boot的使用者，对spring boot starter并不陌生，它极大程度地加强了我们的框架使用体验，能快速的进行其他中间件或者框架的集成，这里我就介绍一下，怎么快速实现一个自定义spring boot starter</strong></p>
 <h2 id="项目使用到的各工具版本"><a href="#项目使用到的各工具版本" class="headerlink" title="项目使用到的各工具版本"></a>项目使用到的各工具版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JDK     1.8</span><br><span class="line">Maven   3.3.9</span><br></pre></td></tr></table></figure>
 
 <h3 id="新建一个maven项目，引入需要的-maven-配置"><a href="#新建一个maven项目，引入需要的-maven-配置" class="headerlink" title="新建一个maven项目，引入需要的 maven 配置"></a>新建一个maven项目，引入需要的 maven 配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-autoconfigure&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.0.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.0.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;&#x2F;optional&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
@@ -240,24 +241,26 @@
 <h3 id="项目源码地址"><a href="#项目源码地址" class="headerlink" title="项目源码地址"></a>项目源码地址</h3><p><a href="https://github.com/zengzhanliang/quick-starter" target="_blank" rel="noopener">自定义spring boot starter项目源码</a></p>
 <p><a href="https://github.com/zengzhanliang/quick-starter-sample" target="_blank" rel="noopener">引入自定义spring boot starter运行的示例项目源码</a></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -308,6 +311,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速实现一个spring-boot-starter"><span class="nav-number">1.</span> <span class="nav-text">快速实现一个spring boot starter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目使用到的各工具版本"><span class="nav-number">1.1.</span> <span class="nav-text">项目使用到的各工具版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个maven项目，引入需要的-maven-配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">新建一个maven项目，引入需要的 maven 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写配置参数类"><span class="nav-number">1.1.2.</span> <span class="nav-text">编写配置参数类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写需要注册的服务类"><span class="nav-number">1.1.3.</span> <span class="nav-text">编写需要注册的服务类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写自动配置类"><span class="nav-number">1.1.4.</span> <span class="nav-text">编写自动配置类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-resources-目录下新建-META-INF-目录-并新增-spring-factories-文件-文件内容如下"><span class="nav-number">1.1.5.</span> <span class="nav-text">在 resources 目录下新建 META-INF 目录, 并新增 spring.factories 文件, 文件内容如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在项目路径下使用-maven-命令，将-jar-包部署到本地-Maven-仓库中"><span class="nav-number">1.1.6.</span> <span class="nav-text">在项目路径下使用 maven 命令，将 jar 包部署到本地 Maven 仓库中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个spring-boot项目，引入我们自定义的spring-boot-starter，对应的maven配置如下"><span class="nav-number">1.1.7.</span> <span class="nav-text">新建一个spring boot项目，引入我们自定义的spring boot starter，对应的maven配置如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-application-properties-文件中新增以下配置"><span class="nav-number">1.1.8.</span> <span class="nav-text">在 application.properties 文件中新增以下配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写测试类"><span class="nav-number">1.1.9.</span> <span class="nav-text">编写测试类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动测试类，可以看到我们想要的打印日志，这样就完成一个自定义的spring-boot-starter了"><span class="nav-number">1.1.10.</span> <span class="nav-text">启动测试类，可以看到我们想要的打印日志，这样就完成一个自定义的spring boot starter了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目源码地址"><span class="nav-number">1.1.11.</span> <span class="nav-text">项目源码地址</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
