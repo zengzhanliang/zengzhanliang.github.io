@@ -46,19 +46,21 @@
   };
 </script>
 
-  <meta name="description" content="记录工作日常，分享技术细节">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zeng&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
+  <meta name="description" content="Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译】Kafka是什么? 全面介绍kafka ">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E3%80%90%E8%AF%91%E3%80%91Kafka%E6%98%AF%E4%BB%80%E4%B9%88-%E5%85%A8%E9%9D%A2%E4%BB%8B%E7%BB%8Dkafka&#x2F;index.html">
 <meta property="og:site_name" content="Zeng&#39;s Blog">
-<meta property="og:description" content="记录工作日常，分享技术细节">
+<meta property="og:description" content="Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-19T06:33:52.000Z">
+<meta property="article:modified_time" content="2019-12-19T06:49:23.079Z">
 <meta property="article:author" content="zengzhanliang">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="大数据">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2019/12/">
+<link rel="canonical" href="http://yoursite.com/2019/12/19/%E3%80%90%E8%AF%91%E3%80%91Kafka%E6%98%AF%E4%BB%80%E4%B9%88-%E5%85%A8%E9%9D%A2%E4%BB%8B%E7%BB%8Dkafka/">
 
 
 <script id="page-configurations">
@@ -66,11 +68,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | Zeng's Blog</title>
+  <title>【译】Kafka是什么? 全面介绍kafka  | Zeng's Blog</title>
   
 
 
@@ -165,89 +167,104 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/%E3%80%90%E8%AF%91%E3%80%91Kafka%E6%98%AF%E4%BB%80%E4%B9%88-%E5%85%A8%E9%9D%A2%E4%BB%8B%E7%BB%8Dkafka/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zengzhanliang">
+      <meta itemprop="description" content="记录工作日常，分享技术细节">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zeng's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【译】Kafka是什么? 全面介绍kafka 
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-19 14:33:52 / 修改时间：14:49:23" itemprop="dateCreated datePublished" datetime="2019-12-19T14:33:52+08:00">2019-12-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BF%BB%E8%AF%91/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+        <h2 id="Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行"><a href="#Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行" class="headerlink" title="Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行"></a><em>Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行</em></h2><a id="more"></a> 
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-19T14:33:52+08:00"
-              content="2019-12-19">
-          12-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/19/%E3%80%90%E8%AF%91%E3%80%91Kafka%E6%98%AF%E4%BB%80%E4%B9%88-%E5%85%A8%E9%9D%A2%E4%BB%8B%E7%BB%8Dkafka/" itemprop="url">
-            <span itemprop="name">【译】Kafka是什么? 全面介绍kafka </span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-19T13:48:43+08:00"
-              content="2019-12-19">
-          12-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/19/%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84-spring-boot-starter/" itemprop="url">
-            <span itemprop="name">编写一个统一返回结果的 spring boot starter</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-18T11:49:50+08:00"
-              content="2019-12-18">
-          12-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/18/%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter/" itemprop="url">
-            <span itemprop="name">快速实现一个sping boot starter</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<ul>
+<li>原文地址：<a href="https://dzone.com/articles/what-is-kafka" target="_blank" rel="noopener">what-is-kafka</a></li>
+<li>原文作者：Jean-Paul Azar</li>
+<li>译文出自：曾展良的个人翻译计划</li>
+<li>本文永久链接：<a href="https://zengzhanliang.github.io/2019/12/18/%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAsping-boot-starter/" target="_blank" rel="noopener">什么是kafka</a></li>
+<li>译者：zengzhanliang</li>
+<li>校对者：暂无</li>
+</ul>
+<hr>
+<blockquote>
+<p>Apache Kafka是一个分布式流平台。</p>
+</blockquote>
+<p>Kafka正在爆发式的成长。在《财富》 500强公司中，超过三分之一的公司使用Kafka。这些公司包括排名前十的旅行社，排名前十的银行，排名前十的保险公司，排名前十的电信公司，等等。LinkedIn，Microsoft和Netflix每天使用Kafka处理海量消息（数据量在 1,000,000,000,000 左右）。</p>
+<p>Kafka 配合实时数据流处理组件, 可用于收集数据或对数据进行实时分析（或两者一起使用）。Kafka与其他存储组件一起使用以提供持久性，并且可以用于将事件馈送到 CEP（复杂事件流系统）和 IoT/IFTTT 风格的自动化系统。</p>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/19/%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84-spring-boot-starter/" rel="prev" title="编写一个统一返回结果的 spring boot starter">
+      <i class="fa fa-chevron-left"></i> 编写一个统一返回结果的 spring boot starter
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -298,6 +315,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行"><span class="nav-number">1.</span> <span class="nav-text">Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
