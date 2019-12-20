@@ -54,7 +54,7 @@
 <meta property="og:description" content="Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-19T06:33:52.000Z">
-<meta property="article:modified_time" content="2019-12-19T06:49:23.079Z">
+<meta property="article:modified_time" content="2019-12-20T02:20:42.816Z">
 <meta property="article:author" content="zengzhanliang">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="大数据">
@@ -194,10 +194,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-19 14:33:52 / 修改时间：14:49:23" itemprop="dateCreated datePublished" datetime="2019-12-19T14:33:52+08:00">2019-12-19</time>
+              <time title="创建时间：2019-12-19 14:33:52" itemprop="dateCreated datePublished" datetime="2019-12-19T14:33:52+08:00">2019-12-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-20 10:20:42" itemprop="dateModified" datetime="2019-12-20T10:20:42+08:00">2019-12-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -236,7 +242,35 @@
 <p>Apache Kafka是一个分布式流平台。</p>
 </blockquote>
 <p>Kafka正在爆发式的成长。在《财富》 500强公司中，超过三分之一的公司使用Kafka。这些公司包括排名前十的旅行社，排名前十的银行，排名前十的保险公司，排名前十的电信公司，等等。LinkedIn，Microsoft和Netflix每天使用Kafka处理海量消息（数据量在 1,000,000,000,000 左右）。</p>
-<p>Kafka 配合实时数据流处理组件, 可用于收集数据或对数据进行实时分析（或两者一起使用）。Kafka与其他存储组件一起使用以提供持久性，并且可以用于将事件馈送到 CEP（复杂事件流系统）和 IoT/IFTTT 风格的自动化系统。</p>
+<p><strong>Kafka 配合实时数据流处理组件, 可用于收集数据或对数据进行实时分析（或两者一起使用）</strong>。Kafka与其他存储组件一起使用以提供持久性，并且可以用于将事件馈送到 CEP（复杂事件流系统）和 IoT/IFTTT 风格的自动化系统。</p>
+<h1 id="为什么选择Kafka？"><a href="#为什么选择Kafka？" class="headerlink" title="为什么选择Kafka？"></a>为什么选择Kafka？</h1><p>Kafka通常用于实时流数据架构中以提供实时分析。由于Kafka是一种快速，可伸缩，持久且容错的发布-订阅消息传递系统，因此Kafka用于大数据量和响应性高的服务中，而不去考虑JMS，RabbitMQ和AMQP。</p>
+<p><strong>Kafka具有更高的吞吐量，可靠性和复制特性</strong>，这使其可用于跟踪服务呼叫（跟踪每个呼叫）或跟踪可能不考虑传统MOM的IoT传感器数据之类的事情。</p>
+<p>Kafka可以与Flume / Flafka，Spark Streaming，Storm，HBase，Flink和Spark配合使用，以实时提取，分析和处理流数据。Kafka是用于馈送Hadoop BigData湖的数据流。Kafka代理支持大量消息流，以便在Hadoop或Spark中进行低延迟的后续分析。此外，  Kafka Streams（子项目）可用于实时分析。</p>
+<h1 id="Kafka使用场景"><a href="#Kafka使用场景" class="headerlink" title="Kafka使用场景"></a>Kafka使用场景</h1><p>简而言之，Kafka用于流处理，网站活动跟踪，指标收集和监视，日志聚合，实时分析，CEP，将数据摄取到Spark，将数据摄取到Hadoop，  CQRS，重播消息，错误恢复和保证分布式提交用于内存计算（微服务）的日志。</p>
+<h1 id="谁使用Kafka？"><a href="#谁使用Kafka？" class="headerlink" title="谁使用Kafka？"></a>谁使用Kafka？</h1><p>许多处理大量数据的大公司都使用Kafka。起源于LinkedIn的LinkedIn用来跟踪活动数据和运营指标。Twitter将其用作Storm的一部分，以提供流处理基础结构。Square使用Kafka作为总线，将所有系统事件移至各个Square数据中心（日志，自定义事件，指标等），输出至Splunk（用于Graphite）（仪表板），并实现  类似Esper / CEP  警报系统。</p>
+<p>Spotify，Uber，Tumbler，Goldman Sachs，PayPal，Box，Cisco，CloudFlare和Netflix等其他公司也使用它。</p>
+<h1 id="为什么Kafka如此受欢迎？"><a href="#为什么Kafka如此受欢迎？" class="headerlink" title="为什么Kafka如此受欢迎？"></a>为什么Kafka如此受欢迎？</h1><p>Kafka具有操作简便性。Kafka易于设置和使用，并且很容易弄清楚Kafka是如何工作的。然而，Kafka受欢迎的主要原因是其出色的性能。它稳定，提供可靠的耐用性，具有灵活的发布/队列，可以很好地适应N个消费者组，具有强大的复制能力，为生产者提供可调的一致性保证，并且可以在分片级别（即Kafka）提供保留的订购主题分区）。</p>
+<p>此外，Kafka可以与需要处理数据流的系统配合使用，并使这些系统能够聚合，转换并加载到其他存储中。但是，如果Kafka慢一点，那么这些特征都不重要。</p>
+<blockquote>
+<p>Kafka受欢迎的最重要原因是Kafka的出色表现。</p>
+</blockquote>
+<h1 id="为什么Kafka这么快？"><a href="#为什么Kafka这么快？" class="headerlink" title="为什么Kafka这么快？"></a>为什么Kafka这么快？</h1><p>Kafka非常依赖OS内核来快速移动数据。它依赖零复制的原理  。通过Kafka，您可以将数据记录分批处理。从生产者到文件系统（Kafka主题日志）到消费者，可以端对端地查看这些批次的数据。</p>
+<p>批处理允许更有效的数据压缩并减少I / O延迟。Kafka将不可变的提交日志顺序写入磁盘，从而避免了随机磁盘访问和缓慢的磁盘搜索。Kafka通过分片提供水平缩放。它可以将主题日志分片到数百个（可能是数千个）分区中，成千上万个服务器。这种分片使Kafka可以处理大量负载。</p>
+<h1 id="Kafka：流式架构"><a href="#Kafka：流式架构" class="headerlink" title="Kafka：流式架构"></a>Kafka：流式架构</h1><p>Kafka最常用于将数据实时流式传输到其他系统中。Kafka是中间层，用于分离实时数据管道。</p>
+<p>Kafka核心不适用于直接计算，例如数据聚合或CEP。Kafka流技术是Kafka生态系统的一部分，提供了进行实时分析的能力。</p>
+<p>Kafka可用于馈送快速通道系统（实时和运营数据系统），例如Storm，Flink，Spark流以及您的服务和CEP系统。Kafka还用于流数据以进行批处理数据分析。Kafka支持Hadoop。它将数据流式传输到大数据平台或RDBMS，Cassandra，Spark甚至S3中，以进行将来的数据分析。这些数据存储通常支持数据分析，报告，数据科学处理，合规性审核和备份。</p>
+<h3 id="现在让我们真正回答一个大问题："><a href="#现在让我们真正回答一个大问题：" class="headerlink" title="现在让我们真正回答一个大问题："></a>现在让我们真正回答一个大问题：</h3><hr>
+<h1 id="什么是Kafka？"><a href="#什么是Kafka？" class="headerlink" title="什么是Kafka？"></a>什么是Kafka？</h1><p>Kafka是一个分布式流媒体平台，用于发布和订阅记录流。Kafka用于容错存储。Kafka将主题日志分区复制到多个服务器。Kafka旨在允许您的应用程序在记录发生时进行处理。Kafka快速且通过批处理和压缩记录有效地使用IO。Kafka用于解耦数据流。Kafka用于将数据流传输到数据湖，应用程序和实时流分析系统中。</p>
+<h1 id="Kafka是多语种"><a href="#Kafka是多语种" class="headerlink" title="Kafka是多语种"></a>Kafka是多语种</h1><p>来自客户端和服务器的Kafka通信使用TCP上的有线协议，该协议已进行版本控制和记录。Kafka承诺将与较旧的客户端保持向后兼容性，并且支持多种语言。有C＃，Java，C，Python，Ruby和许多其他语言的客户端。Kafka生态系统还提供REST代理，允许通过HTTP和JSON轻松集成，这使得集成更加容易。</p>
+<p>Kafka还通过Confluent Schema Registry for Kafka支持Avro模式。Avro和Schema Registry允许客户端以多种编程语言生成和读取复杂的记录，并允许记录的演变。Kafka是真正的多语种。</p>
+<h1 id="Kafka很有用"><a href="#Kafka很有用" class="headerlink" title="Kafka很有用"></a>Kafka很有用</h1><p>Kafka允许您构建实时流数据管道。Kafka支持内存中的微服务（例如actor，Akka，  Baratine.io，  QBit，reactors，  reactive，  Vert.x，  RxJava和  Spring Reactor）。Kafka允许您构建对流做出反应的实时流应用程序，以进行实时数据分析，转换，反应，聚合，加入实时数据流以及执行  CEP（复杂事件处理）。</p>
+<p>您可以使用Kafka来帮助收集指标/ KPI，汇总来自许多来源的统计信息以及实施  事件源。您可以将其与微服务（内存中）和参与者系统一起使用以实现内存服务（分布式系统的外部提交日志）。</p>
+<p>您可以使用Kafka在节点之间复制数据，为节点重新同步以及恢复状态。尽管Kafka主要用于实时数据分析和流处理，但您也可以将其用于日志聚合，消息传递，点击流跟踪，审计跟踪等。</p>
+<p>在数据科学和分析非常重要的世界中，捕获数据以馈入数据湖和实时分析系统也 很重要。而且由于Kafka可以承受这些繁重的用例，因此Kafka至关重要。</p>
+<h1 id="Kafka是可伸缩的消息存储"><a href="#Kafka是可伸缩的消息存储" class="headerlink" title="Kafka是可伸缩的消息存储"></a>Kafka是可伸缩的消息存储</h1><p>Kafka是一个很好的记录/消息存储系统。Kafka就像高速文件系统一样，用于提交日志的存储和复制。这些特性使Kafka可用于各种应用程序。</p>
+<p>写入Kafka主题的记录会保留在磁盘上，并复制到其他服务器以实现容错。由于现代驱动器速度快且体积很大，因此非常适合并且非常有用。Kafka生产者可以等待确认，因此消息是持久的，因为在消息复制之前生产者写操作不会完成。Kafka磁盘结构可伸缩。当批量写入大量流时，现代磁盘驱动器具有很高的吞吐量。</p>
+<p>同样，Kafka的客户和消费者可以控制读取位置（偏移），这允许使用案例，例如，如果存在严重错误（例如，修复错误和重播），则重播日志。而且由于在每个消费者组中都跟踪偏移量，这在我们的  Kafka体系结构  文章中已经讨论过，因此消费者可以非常灵活（即重播日志）。</p>
+<h1 id="Kafka的保留纪录"><a href="#Kafka的保留纪录" class="headerlink" title="Kafka的保留纪录"></a>Kafka的保留纪录</h1><p>Kafka群集保留所有已发布的记录。如果未设置限制，它将保留记录，直到磁盘空间用完为止。您可以设置基于时间的限制（可配置的保留期限），基于大小的限制（可根据大小配置）或压缩（使用键保留最新的记录版本）。例如，您可以将保留策略设置为三天或两周或一个月。可以使用主题日志中的记录，直到按时间，大小或压缩将其丢弃。消耗速度不受大小影响，因为Kafka始终写入主题日志的末尾。</p>
 
     </div>
 
@@ -315,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行"><span class="nav-number">1.</span> <span class="nav-text">Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行"><span class="nav-number">1.</span> <span class="nav-text">Kafka通常用于实时流数据架构中以提供实时分析。接下来我们了解下它的使用案例以及分析它为什么如此流行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么选择Kafka？"><span class="nav-number"></span> <span class="nav-text">为什么选择Kafka？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka使用场景"><span class="nav-number"></span> <span class="nav-text">Kafka使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谁使用Kafka？"><span class="nav-number"></span> <span class="nav-text">谁使用Kafka？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么Kafka如此受欢迎？"><span class="nav-number"></span> <span class="nav-text">为什么Kafka如此受欢迎？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么Kafka这么快？"><span class="nav-number"></span> <span class="nav-text">为什么Kafka这么快？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka：流式架构"><span class="nav-number"></span> <span class="nav-text">Kafka：流式架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#现在让我们真正回答一个大问题："><span class="nav-number">0.1.</span> <span class="nav-text">现在让我们真正回答一个大问题：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Kafka？"><span class="nav-number"></span> <span class="nav-text">什么是Kafka？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka是多语种"><span class="nav-number"></span> <span class="nav-text">Kafka是多语种</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka很有用"><span class="nav-number"></span> <span class="nav-text">Kafka很有用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka是可伸缩的消息存储"><span class="nav-number"></span> <span class="nav-text">Kafka是可伸缩的消息存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka的保留纪录"><span class="nav-number"></span> <span class="nav-text">Kafka的保留纪录</span></a></div>
       </div>
       <!--/noindex-->
 
